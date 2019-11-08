@@ -11,10 +11,7 @@ function App() {
 
   const showYesterdaysPhoto = function() {
     setPhotoDay(photoDay - 1);
-    console.log("hi",photoDay);
   }
-
-
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=4cXEcaQuRe0H2jVUHyBMwQOrScsgHBsrO33pMdvw&date=2019-11-0${photoDay}`)
@@ -32,10 +29,6 @@ function App() {
       <Header />
       <POTD yesterdaysPhoto={showYesterdaysPhoto} img={photoOfTheDay.url} />
       <PhotoDetails title={photoOfTheDay.title} date={photoOfTheDay.date} explanation={photoOfTheDay.explanation} />
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun!
-      </p>
     </div>
   );
 }
